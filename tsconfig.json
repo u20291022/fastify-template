@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+
+    "target": "es2022",
+    "lib": ["ES2022"],
+    "module": "es2022",
+
+    "rootDir": "./",
+    "outDir": "./dist",
+    "baseUrl": ".",
+
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "allowJs": false,
+    "resolveJsonModule": false,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+
+    "removeComments": true,
+    "disableSourceOfProjectReferenceRedirect": true,
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["source/**/*", "tests/**/*"]
+}
