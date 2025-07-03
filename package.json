@@ -10,7 +10,8 @@
     "pretty:check": "prettier --check .",
     "prepare": "husky || true",
     "build": "tsup",
-    "dev": "cross-env NODE_ENV=dev tsup --watch --onSuccess \"node dist/index.mjs\""
+    "dev": "cross-env NODE_ENV=dev tsup --watch --onSuccess \"node dist/index.mjs\"",
+    "start": "node dist/index.mjs"
   },
   "keywords": [],
   "author": "",
