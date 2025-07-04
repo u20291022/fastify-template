@@ -1,0 +1,27 @@
+FROM node:22-alpine
+
+WORKDIR /app
+
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -u 1001 -G nodejs -S appuser
+
+RUN npm i -g pnpm
+
+ENV NODE_ENV=production
+
+COPY package.json pnpm-lock.yaml ./
+
+RUN pnpm i --frozen-lockfile
+
+COPY . .
+
+RUN pnpm build
+
+RUN pnpm prune --prod
+
+RUN find /app -mindepth 1 -not -path "/app/node_modules/*" -exec chown appuser:nodejs {} +
+USER appuser
+
+EXPOSE ${SERVER_PORT}
+
+CMD ["pnpm", "start"]
