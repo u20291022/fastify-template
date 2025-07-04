@@ -35,7 +35,7 @@
       "@/errors/*": ["./source/errors/*"],
       "@/schemas/*": ["./source/schemas/*"],
       "@/types/*": ["./source/types/*"],
-      "@/utils/*": ["./source/utils/*"],
+      "@/utils/*": ["./source/utils/*"]
     }
   },
   "include": ["source/**/*", "tests/**/*"]

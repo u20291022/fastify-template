@@ -1,0 +1,12 @@
+export type AllErrors = GlobalError | SecurityError;
+
+export enum GlobalError {
+  INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR",
+  VALIDATION_ERROR = "VALIDATION_ERROR",
+  BAD_REQUEST_ERROR = "BAD_REQUEST_ERROR",
+  NOT_FOUND_ERROR = "NOT_FOUND_ERROR",
+}
+
+export enum SecurityError {
+  AUTHORIZATION_ERROR = "AUTHORIZATION_ERROR",
+}
