@@ -4,7 +4,8 @@
 
     "target": "es2022",
     "lib": ["ES2022"],
-    "module": "es2022",
+    "module": "node16",
+    "moduleResolution": "node16",
 
     "rootDir": "./",
     "outDir": "./dist",
@@ -18,12 +19,23 @@
     "resolveJsonModule": false,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
 
     "removeComments": true,
     "disableSourceOfProjectReferenceRedirect": true,
 
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./source/*"],
+      "@/app/*": ["./source/app/*"],
+      "@/app/hooks/*": ["./source/app/hooks/*"],
+      "@/app/plugins/*": ["./source/app/plugins/*"],
+      "@/app/routes/*": ["./source/app/routes/*"],
+      "@/database/*": ["./source/database/*"],
+      "@/enums/*": ["./source/enums/*"],
+      "@/errors/*": ["./source/errors/*"],
+      "@/schemas/*": ["./source/schemas/*"],
+      "@/types/*": ["./source/types/*"],
+      "@/utils/*": ["./source/utils/*"],
     }
   },
   "include": ["source/**/*", "tests/**/*"]
