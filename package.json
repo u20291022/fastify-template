@@ -54,7 +54,8 @@
   },
   "lint-staged": {
     "**/*": [
-      "pnpm prettier --write --ignore-unknown"
+      "pnpm pretty:check",
+      "pnpm lint"
     ]
   }
 }

@@ -2,7 +2,7 @@ import {handleHealthcheckGet} from "@/app/routes/globals/healthcheck/healthcheck
 import {FastifyInstance} from "fastify";
 
 describe("Healthcheck handler unit", () => {
-  it("returns success response", async () => {
+  it("should return success response", async () => {
     const fastify = {} as FastifyInstance;
     const request: any = {};
     const reply: any = {};
