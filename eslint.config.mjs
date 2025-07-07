@@ -7,7 +7,12 @@ export default tseslint.config({
   extends: [js.configs.recommended, tseslint.configs.recommended],
   rules: {
     eqeqeq: ["error", "always"],
-    "no-unused-vars": ["warn", {}],
+    "no-unused-vars": [
+      "warn",
+      {
+        args: "none",
+      },
+    ],
     "no-var": "error",
     "no-await-in-loop": "error",
     "no-irregular-whitespace": "error",
@@ -22,7 +27,17 @@ export default tseslint.config({
     "prefer-const": "error",
     "prefer-rest-params": "error",
     "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/no-empty-object-type": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        args: "none",
+      },
+    ],
+    "@typescript-eslint/no-empty-object-type": [
+      "warn",
+      {
+        allowInterfaces: "always",
+      },
+    ],
   },
 });
