@@ -1,15 +1,14 @@
 import "dotenv-flow/config";
 import {buildApp} from "./app/app";
 import {getFastifyLoggerOptions} from "./utils/logger";
-import { ENV_SCHEMA } from "./schemas/models/env.model";
+import {ENV_SCHEMA} from "./schemas/models/env.model";
 
 const main = async () => {
   const FAILURE_CODE = 1;
 
   try {
     ENV_SCHEMA.parse(process.env);
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
     process.exit(FAILURE_CODE);
   }

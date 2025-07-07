@@ -1,4 +1,4 @@
-import { ENVType } from "@/schemas/models/env.model";
+import {ENVType} from "@/schemas/models/env.model";
 
 declare global {
   namespace NodeJS {
