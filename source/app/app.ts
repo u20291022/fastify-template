@@ -5,6 +5,8 @@ import swaggerPlugin from "./plugins/swagger.plugin";
 import globalRoutes from "./routes/globals";
 import jwtPlugin from "./plugins/jwt.plugin";
 import errorsHandlerPlugin from "./plugins/errors-handler.plugin";
+import corsPlugin from "./plugins/cors.plugin";
+import helmetPlugin from "./plugins/helmet.plugin";
 
 export const buildApp = (fastifyOptions?: FastifyServerOptions) => {
   const fastify = Fastify(fastifyOptions);
@@ -13,6 +15,8 @@ export const buildApp = (fastifyOptions?: FastifyServerOptions) => {
   fastify.withTypeProvider<ZodTypeProvider>();
 
   // register external plugins
+  fastify.register(corsPlugin);
+  fastify.register(helmetPlugin);
   fastify.register(fastifyZodPlugin);
   fastify.register(swaggerPlugin);
   fastify.register(errorsHandlerPlugin);
