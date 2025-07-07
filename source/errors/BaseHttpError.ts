@@ -1,6 +1,7 @@
 import {AllErrors} from "@/enums/error.enum";
 import {StatusCode} from "@/enums/status-code.enum";
 import {ErrorResponseSchema} from "@/schemas/response.schema";
+import appConfig from "@/utils/app-config";
 
 export class BaseHttpError extends Error {
   constructor(
@@ -17,7 +18,7 @@ export class BaseHttpError extends Error {
       message: "Something went wrong!",
       error: {
         code: this.code,
-        details: process.env.NODE_ENV === "production" ? null : this.details,
+        details: appConfig.NODE_ENV === "production" ? null : this.details,
       },
     };
   }

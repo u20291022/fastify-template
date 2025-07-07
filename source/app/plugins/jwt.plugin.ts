@@ -4,14 +4,15 @@ import fastifyCookie from "@fastify/cookie";
 import {FastifyReply, FastifyRequest} from "fastify";
 import {JWTPayload} from "@/schemas/models/jwt.model";
 import {HttpSecurityError} from "@/errors/SecurityError";
+import appConfig from "@/utils/app-config";
 
 export default fp((fastify) => {
   fastify.register(fastifyCookie, {
-    secret: process.env.COOKIES_SECRET,
+    secret: appConfig.COOKIES_SECRET,
   });
 
   fastify.register(fastifyJwt, {
-    secret: process.env.JWT_SECRET,
+    secret: appConfig.JWT_SECRET,
     cookie: {cookieName: "refreshToken", signed: false},
     sign: {expiresIn: "10m"},
   });

@@ -1,9 +1,10 @@
 import fp from "fastify-plugin";
 import fastifySwagger from "@fastify/swagger";
 import {jsonSchemaTransform, jsonSchemaTransformObject} from "fastify-type-provider-zod";
+import appConfig from "@/utils/app-config";
 
 export default fp((fastify) => {
-  const isDevelopment = process.env.NODE_ENV === "develop";
+  const isDevelopment = appConfig.NODE_ENV === "develop";
   if (!isDevelopment) return;
 
   fastify.register(fastifySwagger, {
@@ -13,7 +14,7 @@ export default fp((fastify) => {
         version: "1.0.0",
       },
       servers: [
-        {description: "Development server", url: `http://127.0.0.1:${process.env.SERVER_PORT}`},
+        {description: "Development server", url: `http://127.0.0.1:${appConfig.SERVER_PORT}`},
       ],
     },
     transform: jsonSchemaTransform,

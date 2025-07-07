@@ -1,4 +1,5 @@
 import pino from "pino";
+import appConfig from "./app-config";
 
 export const getFastifyLoggerOptions = () => {
   const fastifyLogger = getFastifyLogger();
@@ -7,7 +8,7 @@ export const getFastifyLoggerOptions = () => {
 };
 
 export const getFastifyLogger = () => {
-  const isTest = process.env.NODE_ENV === "test";
+  const isTest = appConfig.NODE_ENV === "test";
   if (isTest) return;
 
   const logger = pino({
